@@ -37,7 +37,7 @@ const Home = () => {
           transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="eyebrow">Interactive</p>
-          <h1>Algorithm Visualizer</h1>
+          <h1>Algorithm Engine</h1>
           <p className="hero-copy">Learn by seeing algorithms in motion.</p>
         </Motion.section>
 
