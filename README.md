@@ -1,6 +1,6 @@
-# Algo Visualizer
+# Algo Engine
 
-Algo Visualizer is an interactive React application for learning algorithms through visual simulation, step-by-step execution, and explanation-first workflows.
+Algo Engine is an interactive React application for learning algorithms through visual simulation, step-by-step execution, and explanation-first workflows.
 
 The project supports category browsing, algorithm detail pages, custom user input, playback controls, and internal state panels (graphs, tables, and iteration traces).
 
