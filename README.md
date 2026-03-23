@@ -1,100 +1,157 @@
-# 📉 Huffman Encoding Visualizer
+# Algo Visualizer
 
-An interactive **Huffman Encoding visualizer** built using **React + Vite**, designed to demonstrate the complete compression workflow step-by-step.  
-The application visually constructs the Huffman Tree, generates optimal binary codes for each character, and supports **real-time encoding and decoding** of text.
+Algo Visualizer is an interactive React application for learning algorithms through visual simulation, step-by-step execution, and explanation-first workflows.
 
-This project focuses on making a **greedy compression algorithm intuitive and transparent** through animations and incremental state updates.
+The project supports category browsing, algorithm detail pages, custom user input, playback controls, and internal state panels (graphs, tables, and iteration traces).
 
----
+## Highlights
 
-## 🚀 Features
+- Category-based learning flow from home page to algorithm simulation
+- Dedicated simulation engine for sorting, searching, graph, and dynamic-programming problems
+- Step playback with previous, next, and auto-play controls
+- Visual state views:
+  - Numeric bar charts
+  - Graph node/edge panels
+  - DP/state tables
+  - Token/chip views for text-like sequences
+- Written explanation timeline for every simulation step
 
-- **Step-by-Step Tree Construction**  
-  Sequentially merges the two lowest-frequency nodes with clear narration of each step.
+## Tech Stack
 
-- **Animated Tree Visualization**  
-  Uses `react-d3-tree` to dynamically render and update the Huffman Tree during construction.
+- React 19
+- React Router DOM
+- Framer Motion
+- Vite
+- ESLint
 
-- **Automatic Huffman Code Generation**  
-  Generates optimal prefix-free binary codes for each character once the tree is complete.
+## Project Structure
 
-- **Encoding & Decoding Support**  
-  - Encode plain text using the generated Huffman codes  
-  - Decode any valid Huffman-encoded binary string using the constructed tree
+Core application files:
 
-- **Auto Animation Mode**  
-  Tree automatically advances to the next step every **1.5 seconds**.
+- src/main.jsx: entry point
+- src/App.jsx: router setup
+- src/pages/Home.jsx: landing page
+- src/pages/CategoryPage.jsx: per-category algorithm listing
+- src/pages/AlgorithmSimulation.jsx: main simulation experience
+- src/components/AlgoCard.jsx: category card component used on home page
 
-- **Reset Functionality**  
-  Instantly clears the current state and restarts the visualization.
+Simulation and data layers:
 
----
+- src/data/algorithms.js: home page category cards
+- src/data/categoryAlgorithms.js: category to algorithm catalog mapping
+- src/utils/algorithmSimulations.js: generic simulation engine and input specs
+- src/utils/sortingSimulations.js: sorting-focused simulation utilities
 
-## 🛠️ Tech Stack
+Styling and docs:
 
-- **React + Vite** – Component-based UI and fast development environment  
-- **react-d3-tree** – Interactive and animated tree visualization  
-- **JavaScript (ES6)** – Core Huffman encoding/decoding logic  
-- **CSS** – Styling and layout  
+- src/index.css: global site styles
+- src/styles/sorting.css: category/simulation styles
+- docs/simulation-inputs.md: algorithm input formats and test cases
 
----
+## Routing
 
-## 📂 How It Works
+The app uses dynamic routes:
 
-1. **Input Text**  
-   Enter any string to be compressed.
+- /: home page
+- /:categoryId: category algorithm listing
+- /:categoryId/:algorithmId: algorithm simulation page
 
-2. **Frequency Analysis**  
-   The application computes character frequencies from the input.
+Examples:
 
-3. **Tree Construction**  
-   Nodes with the lowest frequencies are merged iteratively to build the Huffman Tree.
+- /sorting
+- /sorting/bubble
+- /graphs/topological
+- /dp/knapsack
 
-4. **Visualization**  
-   Each merge operation is visualized in real time with animated transitions.
+## Supported Categories
 
-5. **Code Generation**  
-   Binary Huffman codes are derived from root-to-leaf paths.
+- Sorting and Searching
+- Graph Algorithms
+- Dynamic Programming
+- Greedy Algorithms
+- Tree Algorithms
+- Pathfinding Algorithms
+- String Algorithms
+- Backtracking Algorithms
 
-6. **Decoding**  
-   Enter a binary string to decode it back into the original text using the same tree.
+## Simulation Input Modes
 
----
+The simulator selects input UI and validation rules by algorithm type:
 
-## ▶️ Usage
+- numeric list mode
+- numeric search mode (list + target)
+- graph mode (node count, edges, optional start/target)
+- knapsack mode (weights, values, capacity)
+- lcs mode (two strings)
+- generic value-list mode
+
+For exact test cases and examples, see docs/simulation-inputs.md.
+
+## Local Development
+
+1. Install dependencies
 
 ```bash
-# Clone the repository
-git clone https://github.com/Drona-Srivastava/huffman-visualizer
-
-# Navigate into the project directory
-cd huffman-visualizer
-
-# Install dependencies
 npm install
+```
 
-# Start the development server
+2. Start development server
+
+```bash
 npm run dev
 ```
-## 📷 Screenshots
 
-### 1️⃣ Home Page / Input Screen
+3. Build for production
 
-![Home Page](screenshots/home.png)
+```bash
+npm run build
+```
 
-### 2️⃣ Tree Building Animation
+4. Preview production build
 
-https://github.com/user-attachments/assets/79f183bd-6f3f-451e-a1c2-d6246e6a1d0c
+```bash
+npm run preview
+```
 
+## Scripts
 
-### 3️⃣ Generated Tree
+- npm run dev: start Vite dev server
+- npm run build: create production build
+- npm run preview: serve build output locally
+- npm run lint: run ESLint checks
 
-![Huffman Tree](screenshots/tree.png)
+## Deployment (Vercel)
 
-### 4️⃣ Generated Huffman Codes
+This repository includes vercel.json with an SPA rewrite to index.html for all paths.
 
-![Huffman Codes](screenshots/codes.png)
+Why this matters:
 
-### 5️⃣ Decoding Example
+- React Router uses browser history routes
+- Direct navigation to deep links must resolve to the frontend entry HTML
+- Without rewrite support, routes like /graphs/dfs can return 404 in production
 
-![Decoding](screenshots/decoding.png)
+## Accessibility and UX Notes
+
+- Keyboard-friendly interactions on clickable cards
+- High-contrast simulation panels for readability
+- Step explanations to support conceptual understanding beyond animation
+
+## Extending the Project
+
+Common next enhancements:
+
+- Add mathematically strict simulators for remaining placeholder algorithms
+- Add per-step pseudocode highlighting
+- Add export/share of input presets
+- Add automated tests for simulation engines and route-level smoke tests
+
+## Contributing
+
+1. Create a feature branch
+2. Keep changes scoped and documented
+3. Run lint before opening a PR
+4. Update docs/simulation-inputs.md when input rules change
+
+## License
+
+No license file is currently included. Add one if you plan to distribute publicly.

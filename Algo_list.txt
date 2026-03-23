@@ -1,0 +1,48 @@
+Sorting
+Bubble Sort (for beginners)
+Selection Sort
+Insertion Sort
+Merge Sort
+Quick Sort 
+Heap Sort
+Binary Search
+Ternary Search
+
+Graph Algorithms
+BFS (Breadth First Search)
+DFS (Depth First Search)
+Dijkstra’s Algorithm 
+A* Search  (next-level)
+Topological Sort
+Kurskal's Algorithm
+Prim's Algorithm
+Union-find
+
+Dynamic Programming
+0/1 Knapsack 
+Longest Common Subsequence (LCS) 
+Longest Increasing Subsequence (LIS)
+Coin Change
+Matrix Chain Multiplication
+
+Greedy Algorithms
+Activity Selection
+Huffman Encoding 
+Fractional Knapsack
+
+Tree Algorithms
+Binary Tree Traversals (Inorder, Preorder, Postorder)
+BST Insert/Delete/Search
+Lowest Common Ancestor (LCA)
+
+Pathfinding
+A* (if not already)
+Greedy Best First Search
+
+String Algorithms (RARE = IMPRESSIVE)
+KMP Algorithm 
+Rabin-Karp
+
+Backtracking
+N-Queens 
+Sudoku Solver
